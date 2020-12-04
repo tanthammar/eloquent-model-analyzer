@@ -38,7 +38,7 @@ class Column implements Arrayable
         $this->table = $table;
         $this->column = $column;
         $databasePlatform = DB::connection()->getDoctrineSchemaManager()->getDatabasePlatform();
-        $databasePlatform->registerDoctrineTypeMapping('enum', 'enum');
+        $databasePlatform->registerDoctrineTypeMapping('enum', 'string');
         $this->data = DB::connection()->getDoctrineColumn($table, $column);
     }
 
